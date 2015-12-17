@@ -1,7 +1,5 @@
-%h1 Listing items
-
-%table
-  %thead
+%table.table
+  %thead.thead-inverse.table-hover
     %tr
       %th Identifier
       %th Description
@@ -9,8 +7,6 @@
       %th Price
       %th Notes
       %th Retail url
-      %th
-      %th
       %th
 
   %tbody
@@ -23,9 +19,4 @@
         %td= item.notes
         %td= item.retail_url
         %td= link_to 'Show', item
-        %td= link_to 'Edit', edit_item_path(item)
-        %td= link_to 'Destroy', item, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
-%br
-
-= link_to 'New Item', new_item_path
