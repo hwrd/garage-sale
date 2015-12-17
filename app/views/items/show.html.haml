@@ -1,0 +1,24 @@
+%p#notice= notice
+
+%p
+  %b Identifier:
+  = @item.identifier
+%p
+  %b Description:
+  = @item.description
+%p
+  %b Retail price:
+  = @item.retail_price
+%p
+  %b Price:
+  = @item.price
+%p
+  %b Notes:
+  = @item.notes
+%p
+  %b Retail url:
+  = @item.retail_url
+
+= link_to 'Edit', edit_item_path(@item)
+\|
+= link_to 'Back', items_path
