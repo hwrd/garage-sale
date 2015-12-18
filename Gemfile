@@ -43,6 +43,7 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.1.0'
 end
 
+gem 'csv-importer'
 
 gem 'omniauth'
 gem 'omniauth-frontdesk', github: 'hwrd/omniauth-frontdesk'
