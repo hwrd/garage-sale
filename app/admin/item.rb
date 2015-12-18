@@ -1,17 +1,16 @@
 ActiveAdmin.register Item do
+  config.per_page = 100
 
-# See permitted parameters documentation:
-# https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-#
-# permit_params :list, :of, :attributes, :on, :model
-#
-# or
-#
-# permit_params do
-#   permitted = [:permitted, :attributes]
-#   permitted << :other if resource.something?
-#   permitted
-# end
+  index do
+    selectable_column
+    column :identifier
+    column :description
+    column :retail_price
+    column :price
+    column :notes
+    column :retail_url
+    actions
+  end
 
   collection_action :upload do
 
