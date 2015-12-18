@@ -45,6 +45,8 @@ end
 
 gem 'csv-importer'
 
+gem 'activeadmin', github: 'activeadmin'
+
 gem 'omniauth'
 gem 'omniauth-frontdesk', github: 'hwrd/omniauth-frontdesk'
 
