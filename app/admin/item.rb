@@ -9,6 +9,7 @@ ActiveAdmin.register Item do
     column :price
     column :notes
     column :retail_url
+    column :category
     actions
   end
 

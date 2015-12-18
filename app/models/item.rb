@@ -1,4 +1,5 @@
 class Item < ActiveRecord::Base
+  belongs_to :category
 end
 
 # == Schema Information
@@ -14,4 +15,5 @@ end
 #  retail_url   :string
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
+#  category_id  :integer
 #

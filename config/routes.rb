@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :categories
   ActiveAdmin.routes(self)
   resources :items, only: [:index, :show]
 
