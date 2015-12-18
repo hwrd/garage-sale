@@ -12,7 +12,7 @@
       %tr
         %td= item.identifier
         %td= item.description
-        %td= item.price
+        %td= number_to_currency item.price
         %td= item.notes
         %td= link_to 'Show', item
 
