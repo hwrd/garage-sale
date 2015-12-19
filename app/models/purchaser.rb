@@ -1,4 +1,4 @@
-class Category < ActiveRecord::Base
+class Purchaser < ActiveRecord::Base
   validates :name, presence: true
 
   has_many :items
@@ -6,7 +6,7 @@ end
 
 # == Schema Information
 #
-# Table name: categories
+# Table name: purchasers
 #
 #  id         :integer          not null, primary key
 #  name       :string

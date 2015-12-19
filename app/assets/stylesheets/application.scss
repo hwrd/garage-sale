@@ -14,6 +14,10 @@
 
 @import "bootstrap";
 
+tr.unavailable {
+  color: lighten($text-muted, 40%);
+}
+
 body {
   padding-top: 6rem;
 }

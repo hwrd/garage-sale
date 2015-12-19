@@ -9,10 +9,9 @@
 
   %tbody
     - @items.each do |item|
-      %tr
+      %tr{class: ('unavailable' unless item.available?)}
         %td= item.identifier
         %td= item.description
         %td= number_to_currency item.price
         %td= item.notes
-        %td= link_to 'Show', item
-
+        %td= link_to 'Details', item

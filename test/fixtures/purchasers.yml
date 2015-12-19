@@ -1,12 +1,14 @@
-class Category < ActiveRecord::Base
-  validates :name, presence: true
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-  has_many :items
-end
+one:
+  name: MyString
+
+two:
+  name: MyString
 
 # == Schema Information
 #
-# Table name: categories
+# Table name: purchasers
 #
 #  id         :integer          not null, primary key
 #  name       :string

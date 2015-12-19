@@ -1,5 +1,10 @@
 class Item < ActiveRecord::Base
   belongs_to :category
+  belongs_to :purchaser
+
+  def available?
+    purchaser.nil?
+  end
 end
 
 # == Schema Information
@@ -16,4 +21,5 @@ end
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #  category_id  :integer
+#  purchaser_id :integer
 #

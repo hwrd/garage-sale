@@ -1,12 +1,14 @@
-class Category < ActiveRecord::Base
-  validates :name, presence: true
+require 'test_helper'
 
-  has_many :items
+class PurchaserTest < ActiveSupport::TestCase
+  # test "the truth" do
+  #   assert true
+  # end
 end
 
 # == Schema Information
 #
-# Table name: categories
+# Table name: purchasers
 #
 #  id         :integer          not null, primary key
 #  name       :string
