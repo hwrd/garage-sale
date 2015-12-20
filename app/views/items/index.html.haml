@@ -14,4 +14,11 @@
         %td= item.description
         %td= number_to_currency item.price
         %td= item.notes
-        %td= link_to 'Details', item
+        %td
+          %ul.list-inline
+            %li.list-inline-item
+              = link_to item do
+                %i.fa.fa-info-circle
+            %li.list-inline-item
+              = link_to item.retail_url do
+                %i.fa.fa-external-link
