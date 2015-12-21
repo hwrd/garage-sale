@@ -17,7 +17,7 @@ gem 'therubyracer', platforms: :ruby
 gem 'haml'
 gem 'haml-rails'
 
-gem 'unicorn'
+gem 'puma'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -55,7 +55,7 @@ gem 'omniauth-frontdesk', github: 'hwrd/omniauth-frontdesk'
 
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 
-gem 'rails_12factor'
+gem 'rails_12factor', group: :production
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
