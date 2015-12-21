@@ -1,3 +1,8 @@
+%ol.breadcrumb
+  %li= link_to "Home", root_url
+  %li= link_to @item.category.name, @item.category
+  %li.active= @item.description
+
 .container
   .row
     .col-md-12

@@ -9,7 +9,7 @@
       %th
 
   %tbody
-    - category.items.available.each do |item|
+    - category.items.available.order(identifier: :asc).each do |item|
       %tr{class: ('unavailable' unless item.available?)}
         %td= item.identifier
         %td= item.description
