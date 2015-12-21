@@ -41,12 +41,12 @@ ActiveRecord::Schema.define(version: 20151221060614) do
   create_table "items", force: :cascade do |t|
     t.string   "identifier"
     t.string   "description"
-    t.decimal  "retail_price"
-    t.decimal  "price"
-    t.string   "notes"
+    t.decimal  "retail_price", precision: 6, scale: 2
+    t.decimal  "price",        precision: 6, scale: 2
+    t.text     "notes"
     t.string   "retail_url"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
     t.integer  "category_id"
     t.integer  "purchaser_id"
     t.json     "images"
