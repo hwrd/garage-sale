@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get '/faq' => 'static#faq'
+
   resources :categories, only: [:index, :show]
   ActiveAdmin.routes(self)
   resources :items, only: [:show]
