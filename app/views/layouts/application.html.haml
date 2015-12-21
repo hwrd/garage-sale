@@ -4,7 +4,7 @@
     %meta{:charset => "utf-8"}
     %meta{:name => "viewport", :content => "width=device-width, initial-scale=1, shrink-to-fit=no"}
     %meta{"http-equiv" => "x-ua-compatible", :content => "ie=edge"}
-    %title GarageSale
+    %title CCS&C Garage Sale
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
@@ -19,6 +19,8 @@
           - Category.all.each do |category|
             %li.nav-item
               = link_to category.name, category_url(category), class: 'nav-link'
+          %li.nav-item.pull-xs-right
+            = link_to "FAQ", faq_url, class: 'nav-link'
 
     .container
       = yield
