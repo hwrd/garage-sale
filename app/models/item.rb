@@ -2,8 +2,14 @@ class Item < ActiveRecord::Base
   belongs_to :category
   belongs_to :purchaser
 
+  scope :available, -> { where(purchaser: nil) }
+
   def available?
     purchaser.nil?
+  end
+
+  def to_param
+    identifier
   end
 end
 

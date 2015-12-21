@@ -12,11 +12,6 @@ class CategoriesController < ApplicationController
   def show
   end
 
-  # GET /categories/new
-  def new
-    @category = Category.new
-  end
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_category

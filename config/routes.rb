@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  resources :categories
+  resources :categories, only: [:index, :show]
   ActiveAdmin.routes(self)
-  resources :items, only: [:index, :show]
+  resources :items, only: [:show]
 
-  root 'items#index'
+  root 'categories#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

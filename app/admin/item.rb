@@ -1,5 +1,13 @@
 ActiveAdmin.register Item do
+  permit_params :identifier, :description, :notes, :retail_price, :price, :retail_url, :purchaser_id
+
   config.per_page = 100
+
+  controller do
+    def find_resource
+      scoped_collection.where(identifier: params[:id]).first!
+    end
+  end
 
   index do
     selectable_column

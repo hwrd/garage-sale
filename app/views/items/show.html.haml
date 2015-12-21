@@ -1,22 +1,41 @@
-%p#notice= notice
+.container
+  .row
+    .col-md-12
+      %h1
+        %span.label.label-default= @item.identifier
+        = @item.description
 
-%p
-  %b Identifier:
-  = @item.identifier
-%p
-  %b Description:
-  = @item.description
-%p
-  %b Retail price:
-  = @item.retail_price
-%p
-  %b Price:
-  = @item.price
-%p
-  %b Notes:
-  = @item.notes
-%p
-  %b Retail url:
-  = @item.retail_url
+  .row.m-t-2
+    .col-md-6
+      .row
+        .col-md-12
+          %table
+            %tr
+              %th.text-xs-right Retail Price:&nbsp;
+              %td
+                %s= number_to_currency @item.retail_price
+            %tr
+              %th.text-xs-right Price:&nbsp;
+              %td.text-danger.font-weight-bold.price
+                = number_to_currency @item.price
+            %tr
+              %th.text-xs-right You Save:&nbsp;
+              %td.text-danger
+                = number_to_currency price_savings(@item.retail_price, @item.price)
+                (
+                = number_to_percentage(price_savings_percentage(@item.retail_price, @item.price), precision: 0)
+                )
 
-= link_to 'Back', items_path
+      .row.m-t-2
+        .col-md-12
+          %dl
+            %dt Notes
+            %dd
+              = simple_format @item.notes
+
+
+    .col-md-6
+      = image_tag 'no-image.png', class: 'img-fluid img-thumbnail'
+
+
+= link_to 'Back', category_path(@item.category)

@@ -1,19 +1,19 @@
-%table.table
+%h3{id: category.name.parameterize }= category.name
+
+%table.table.table-sm.table-striped
   %thead.thead-inverse.table-hover
     %tr
       %th Identifier
       %th Description
       %th Price
-      %th Notes
       %th
 
   %tbody
-    - @items.each do |item|
+    - category.items.available.each do |item|
       %tr{class: ('unavailable' unless item.available?)}
         %td= item.identifier
         %td= item.description
         %td= number_to_currency item.price
-        %td= item.notes
         %td
           %ul.list-inline
             %li.list-inline-item
