@@ -40,6 +40,9 @@
             %dd
               = simple_format @item.notes
 
+      .row.m-t-2
+        = mail_to "info+sale-question@circlecitysc.com", "Ask Question", subject: "Question: #{@item.identifier} - #{@item.description}", body: "\n\n\n\n#{@item.identifier} - #{@item.description}: #{item_url(@item)}", class: 'btn btn-primary'
+
 
     .col-md-6
       - if @item.images.empty?
