@@ -48,6 +48,7 @@ gem 'font-awesome-sass'
 gem 'csv-importer'
 
 gem 'activeadmin', github: 'activeadmin'
+gem 'devise'
 
 gem 'omniauth'
 gem 'omniauth-frontdesk', github: 'hwrd/omniauth-frontdesk'
