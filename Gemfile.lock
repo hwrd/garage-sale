@@ -17,6 +17,16 @@ GIT
       sass-rails
 
 GIT
+  remote: git://github.com/carrierwaveuploader/carrierwave.git
+  revision: ecf57fe5fed17657b258d708a59feeec9fac74cd
+  specs:
+    carrierwave (0.10.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
+      mime-types (>= 1.16)
+
+GIT
   remote: git://github.com/ctran/annotate_models.git
   revision: d878a5b784ee0f703e9ee677bc0231dc24159512
   specs:
@@ -293,6 +303,7 @@ DEPENDENCIES
   annotate!
   bootstrap (~> 4.0.0.alpha3)
   byebug
+  carrierwave!
   coffee-rails (~> 4.1.0)
   csv-importer
   dotenv-rails

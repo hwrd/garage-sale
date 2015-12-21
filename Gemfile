@@ -52,6 +52,8 @@ gem 'activeadmin', github: 'activeadmin'
 gem 'omniauth'
 gem 'omniauth-frontdesk', github: 'hwrd/omniauth-frontdesk'
 
+gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'

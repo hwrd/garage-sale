@@ -4,6 +4,8 @@ class Item < ActiveRecord::Base
 
   scope :available, -> { where(purchaser: nil) }
 
+  mount_uploaders :images, ImageUploader
+
   def available?
     purchaser.nil?
   end
@@ -28,4 +30,5 @@ end
 #  updated_at   :datetime         not null
 #  category_id  :integer
 #  purchaser_id :integer
+#  images       :json
 #

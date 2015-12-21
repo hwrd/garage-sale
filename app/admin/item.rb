@@ -1,5 +1,5 @@
 ActiveAdmin.register Item do
-  permit_params :identifier, :description, :notes, :retail_price, :price, :retail_url, :purchaser_id
+  permit_params :identifier, :description, :notes, :retail_price, :price, :retail_url, :purchaser_id, { images: [] }
 
   config.per_page = 100
 
@@ -7,6 +7,24 @@ ActiveAdmin.register Item do
     def find_resource
       scoped_collection.where(identifier: params[:id]).first!
     end
+  end
+
+  form do |f|
+    f.inputs do
+      f.input :identifier
+      f.input :description
+      f.input :notes
+      f.input :price
+      f.input :retail_price
+      f.input :retail_url
+      f.input :purchaser
+    end
+
+    f.inputs do
+      f.file_field :images, multiple: true
+    end
+
+    f.actions
   end
 
   index do

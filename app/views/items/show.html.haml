@@ -15,21 +15,23 @@
       .row
         .col-md-12
           %table
-            %tr
-              %th.text-xs-right Retail Price:&nbsp;
-              %td
-                %s= number_to_currency @item.retail_price
+            - if @item.retail_price
+              %tr
+                %th.text-xs-right Retail Price:&nbsp;
+                %td
+                  %s= number_to_currency @item.retail_price
             %tr
               %th.text-xs-right Price:&nbsp;
               %td.text-danger.font-weight-bold.price
                 = number_to_currency @item.price
-            %tr
-              %th.text-xs-right You Save:&nbsp;
-              %td.text-danger
-                = number_to_currency price_savings(@item.retail_price, @item.price)
-                (
-                = number_to_percentage(price_savings_percentage(@item.retail_price, @item.price), precision: 0)
-                )
+            - if @item.retail_price
+              %tr
+                %th.text-xs-right You Save:&nbsp;
+                %td.text-danger
+                  = number_to_currency price_savings(@item.retail_price, @item.price)
+                  (
+                  = number_to_percentage(price_savings_percentage(@item.retail_price, @item.price), precision: 0)
+                  )
 
       .row.m-t-2
         .col-md-12
@@ -40,7 +42,8 @@
 
 
     .col-md-6
-      = image_tag 'no-image.png', class: 'img-fluid img-thumbnail'
-
-
-= link_to 'Back', category_path(@item.category)
+      - if @item.images.empty?
+        = image_tag 'no-image.png', class: 'img-fluid img-thumbnail'
+      - else
+        - @item.images.each do |image|
+          = image_tag image.url, class: 'img-fluid img-thumbnail'
