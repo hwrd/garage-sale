@@ -54,6 +54,7 @@ gem 'omniauth'
 gem 'omniauth-frontdesk', github: 'hwrd/omniauth-frontdesk'
 
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
+gem "fog-aws"
 
 gem 'rails_12factor', group: :production
 
@@ -70,7 +71,7 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'quiet_assets'
-
+  gem 'foreman'
   gem 'letter_opener'
   gem 'annotate', git: 'git://github.com/ctran/annotate_models.git'
 end
