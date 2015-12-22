@@ -3,6 +3,8 @@ ActiveAdmin.register Item do
 
   config.per_page = 100
 
+  config.sort_order = "identifier_asc"
+
   controller do
     def find_resource
       scoped_collection.where(identifier: params[:id]).first!
