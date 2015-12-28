@@ -23,4 +23,7 @@
             = link_to "FAQ", faq_url, class: 'nav-link'
 
     .container
-      = yield
+      .row
+        = render Announcement.global
+      .row
+        = yield
