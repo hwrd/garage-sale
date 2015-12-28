@@ -3,7 +3,7 @@
 TODO:
 * Show/Hide price
 * Google Analytics
-* Active Admin item total for purchaser
 
 DONE:
 * Announcement Box
+* Active Admin item total for purchaser
