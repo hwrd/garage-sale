@@ -1,6 +1,7 @@
 == README
 
 TODO:
+* Item retail link
 * Show/Hide price
 * Google Analytics
 
