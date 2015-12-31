@@ -51,4 +51,5 @@
         = image_tag 'no-image.png', class: 'img-fluid img-thumbnail'
       - else
         - @item.images.each do |image|
-          = image_tag image.url, class: 'img-fluid img-thumbnail'
+          = link_to image.url do
+            = image_tag(image.url, class: 'img-fluid img-thumbnail')
