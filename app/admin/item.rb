@@ -52,7 +52,25 @@ ActiveAdmin.register Item do
     redirect_to collection_path, notice: import.report.message
   end
 
+  collection_action :import_images, method: :post do
+    success = 0
+    fail    = 0
+    not_found = 0
+
+    params[:images].each do |image|
+      item = Item.find_by(identifier: File.basename(image.original_filename, ".jpg"))
+      if item
+        item.images = [image]
+        item.save ? success+=1 : fail+=1
+      else
+        not_found+=1
+      end
+    end
+
+    redirect_to collection_path, notice: "Success: #{success}, Fail: #{fail}, Not Found: #{not_found}"
+  end
+
   action_item only: :index do
-    link_to 'Upload CSV', upload_admin_items_path
+    link_to 'Upload', upload_admin_items_path
   end
 end
