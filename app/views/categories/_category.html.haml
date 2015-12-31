@@ -5,17 +5,18 @@
     %tr
       %th Identifier
       %th Description
-      %th Price
-      %th
+      %th.text-xs-right Price
 
   %tbody
     - category.items.available.order(identifier: :asc).each do |item|
       %tr{class: ('unavailable' unless item.available?)}
-        %td= item.identifier
-        %td= item.description
-        %td= number_to_currency item.price
         %td
-          = link_to item do
-            %i.fa.fa-info-circle
-            More Details
+          = item.identifier
+        %td
+          - unless item.images.empty?
+            %i.fa.fa-picture-o
+          = link_to item.description, item
+        %td.text-xs-right
+          = number_to_currency item.price
+
 
