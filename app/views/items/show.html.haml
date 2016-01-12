@@ -38,6 +38,10 @@
       .row.m-t-2
         .col-md-12
           %dl
+            - unless @item.retail_url.blank?
+              %dt Retail Link
+              %dd
+                = link_to @item.retail_url, @item.retail_url, target: "_blank"
             %dt Notes
             %dd
               = simple_format @item.notes
